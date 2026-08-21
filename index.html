@@ -30,7 +30,7 @@
     background-position: top center;
     background-color: rgba(255, 255, 255, 0.6);
     border-radius: 30px;
-    margin: 15px 15px 170px 15px;
+    margin: 30px 15px 250px 15px;
     box-shadow: 0 4px 14px rgba(0, 60, 80, 0.8);
     opacity: 0.9;
   }
@@ -50,7 +50,7 @@
 
   .form-card {
     background: rgba(255, 255, 255, 0.2);
-    border: 1px solid #1e8f6b;
+    border: 1px solid #201e8f65;
     border-radius: 18px;
     padding: 24px 22px;
     box-shadow: 0 4px 14px rgba(0, 60, 80, 0.8);
@@ -67,7 +67,7 @@
 
   .form-card p.subtitulo {
     text-align: center;
-    color: #1e8f6b;
+    color: #201e8f;
     font-weight: bold;
     margin-top: 0;
     margin-bottom: 20px;
@@ -83,7 +83,7 @@
   .convidado-linha input[type="text"] {
     flex: 2 1 200px;
     padding: 10px 12px;
-    border: 1px solid #9bc4bd;
+    border: 1px solid #5957ac;
     border-radius: 10px;
     font-size: 1em;
     max-height: 50px;
@@ -92,7 +92,7 @@
   .convidado-linha select {
     flex: 1 1 130px;
     padding: 10px 12px;
-    border: 1px solid #9bc4bd;
+    border: 1px solid #5957ac;
     border-radius: 10px;
     font-size: 1em;
     background: #fff;
@@ -115,7 +115,7 @@
   }
 
   .convidado-linha .remover-btn:hover {
-    background: #c53838;
+    background: #941717;
   }
 
   .botoes {
@@ -142,12 +142,12 @@
   }
 
   #btn-adicionar {
-    background: #2aa9c4;
+    background: #1e8f6b;
     color: #fff;
   }
 
   #btn-enviar {
-    background: #1e8f6b;
+    background: #2aa9c4;
     color: #fff;
   }
 
@@ -159,7 +159,7 @@
     z-index: 100;
     text-align: center;
     color: #16305e;
-    background: rgba(97, 168, 176, 0.5);
+    background: rgba(104, 146, 176, 0.5);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-top: 0px solid #1e8f6b;
@@ -171,7 +171,7 @@
 
   .aviso-rodape strong {
     color: #c53838;
-    animation: piscar 1.2s ease-in-out infinite;
+    animation: piscar 1.8s ease-in-out infinite;
   }
 
   @keyframes piscar {
@@ -183,7 +183,7 @@
     text-align: center;
     margin-top: 14px;
     font-weight: bold;
-    color: #1e8f6b;
+    color: #201e8f;
     min-height: 20px;
   }
 
@@ -223,13 +223,13 @@
   <div class="conteudo-formulario">
     <div class="form-card">
       <h2>Confirme a sua presença e de seu(s) acompanhante(s) 🎉</h2>
-      <p class="subtitulo">Aniversário de 1 Aninho do Isaque</p>
+      <p class="subtitulo">Aniversário de 1 Aninho do Mathias</p>
 
       <form id="form-presenca">
         <div id="lista-convidados">
           <div class="convidado-linha">
             <input type="text" class="nome-convidado" placeholder="Nome completo" required>
-            <input type="text" class="nome-convidado" placeholder="CPF" required>
+            <input type="text" class="cpf-convidado" placeholder="CPF" required>
             <select class="tipo-convidado">
               <option value="Adulto">Adulto</option>
               <option value="Criança">Criança</option>
@@ -249,7 +249,7 @@
   </div>
 
   <div class="aviso-rodape">
-    ⚠️ <strong>Atenção: Quem não confirmar presença até o dia 15/09/2026, não será considerado(a) na lista de presença da festa.<br> O CPF é obrigatório ser informado devido a uma regra do salão de festas.</strong><br>Caso tenha tido problema ao enviar o formulário, gentileza entrar em contato com o papai ou a mamãe pelo WhatsApp para confirmar a presença.
+    ⚠️ <strong>Atenção: Quem não confirmar presença até o dia 15/09/2026, não será considerado(a) na lista de presença da festa.<br> É obrigatório o número de CPF devido a uma regra do salão de festas.</strong><br>Caso tenha tido problema ao enviar o formulário, gentileza entrar em contato com o papai ou a mamãe pelo WhatsApp para confirmar a presença.
   </div>
 </div>
 
@@ -259,16 +259,16 @@
      ==========================================================
      1. Crie uma conta gratuita em https://www.emailjs.com
      2. Em "Email Services", conecte seu e-mail (Gmail, Outlook etc.)
-        e copie o "Service ID". service_5s93hev
+        e copie o "Service ID". 
      3. Em "Email Templates", crie um template com variáveis:
         {{lista_convidados}}, {{total_convidados}} e {{to_email}}
-        e copie o "Template ID". template_tcuk4ex
-     4. Em "Account" > "General", copie sua "Public Key". w5ZARuDFcB1IAm7kb
+        e copie o "Template ID".
+     4. Em "Account" > "General", copie sua "Public Key".
      5. Substitua os três valores abaixo pelos seus dados reais.
   */
   const EMAILJS_PUBLIC_KEY  = 'w5ZARuDFcB1IAm7kb';
   const EMAILJS_SERVICE_ID  = 'service_5s93hev';
-  const EMAILJS_TEMPLATE_ID = 'template_tcuk4ex';
+  const EMAILJS_TEMPLATE_ID = 'template_ghowueg';
 
   emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
 
@@ -278,7 +278,7 @@
     linha.className = 'convidado-linha';
     linha.innerHTML = `
       <input type="text" class="nome-convidado" placeholder="Nome completo" required>
-      <input type="text" class="nome-convidado" placeholder="CPF" required>
+      <input type="text" class="cpf-convidado" placeholder="CPF" required>
       <select class="tipo-convidado">
         <option value="Adulto">Adulto</option>
         <option value="Criança">Criança</option>
@@ -299,6 +299,7 @@
     e.preventDefault();
 
     const nomes = document.querySelectorAll('.nome-convidado');
+    const cpfs = document.querySelectorAll('.cpf-convidado');
     const tipos = document.querySelectorAll('.tipo-convidado');
     const statusEl = document.getElementById('mensagem-status');
     const btnEnviar = document.getElementById('btn-enviar');
@@ -308,11 +309,13 @@
 
     nomes.forEach((input, i) => {
       const nome = input.value.trim();
-      if (!nome) {
+      const cpf = cpfs[i].value.trim();
+      
+      if (!nome && !cpf) {
         valido = false;
         return;
       }
-      linhas.push(`${i + 1}. ${nome} - ${tipos[i].value}`);
+      linhas.push(`${i + 1}. ${nome} - ${cpf} - ${tipos[i].value}`);
     });
 
     if (!valido || linhas.length === 0) {
